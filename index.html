@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Figtree:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="bmi-page">
+      <div class="top-badge">
+        <span class="top-badge-dot"></span> Health tool
+      </div>
+      <h1 class="hero-title">Body <em>Mass</em><br />Index</h1>
+      <p class="hero-sub">
+        A standard screening metric. Enter your measurements below — results
+        update instantly.
+      </p>
+
+      <div class="card">
+        <div class="card-label">Unit system</div>
+        <div class="unit-toggle">
+          <button
+            class="unit-btn active"
+            id="btn-m"
+            onclick="setUnit('metric')"
+          >
+            Metric — kg &amp; cm
+          </button>
+          <button class="unit-btn" id="btn-i" onclick="setUnit('imperial')">
+            Imperial — lbs &amp; in
+          </button>
+        </div>
+
+        <div class="inputs-grid">
+          <div class="inp-wrap">
+            <span class="inp-label">Weight</span>
+            <div class="inp-inner">
+              <input
+                type="number"
+                id="inp-w"
+                placeholder="70"
+                min="1"
+                step="0.1"
+                aria-label="Weight"
+              />
+              <span class="inp-unit" id="u-w">kg</span>
+            </div>
+          </div>
+          <div class="inp-wrap">
+            <span class="inp-label">Height</span>
+            <div class="inp-inner">
+              <input
+                type="number"
+                id="inp-h"
+                placeholder="170"
+                min="1"
+                step="0.1"
+                aria-label="Height"
+              />
+              <span class="inp-unit" id="u-h">cm</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="err" id="err-msg" role="alert"></p>
+        <button class="calc-btn" onclick="calculateBMI()">
+          Calculate my BMI
+        </button>
+      </div>
+
+      <div class="result-wrap" id="res" aria-live="polite">
+        <div class="card">
+          <div class="result-top">
+            <div class="bmi-big" id="bmi-num">—</div>
+            <span class="cat-pill" id="cat-pill"></span>
+          </div>
+          <p class="advice-text" id="adv"></p>
+
+          <div class="scale-wrap">
+            <div class="scale-track">
+              <div class="seg s1"></div>
+              <div class="seg s2"></div>
+              <div class="seg s3"></div>
+              <div class="seg s4"></div>
+            </div>
+            <div class="needle-row">
+              <div class="needle-dot" id="ndl" style="left: 0%"></div>
+            </div>
+            <div class="scale-labels">
+              <span>Underweight</span><span>Normal</span><span>Overweight</span
+              ><span>Obese</span>
+            </div>
+          </div>
+
+          <div class="stats-row">
+            <div class="stat-box">
+              <span class="stat-lbl">Your BMI</span>
+              <span class="stat-val" id="s-bmi">—</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-lbl">Weight</span>
+              <span class="stat-val" id="s-w">—</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-lbl">Height</span>
+              <span class="stat-val" id="s-h">—</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-label">WHO reference ranges</div>
+          <div class="ref-grid">
+            <div class="ref-cell r-under">
+              <span class="ref-name">Under&shy;weight</span>
+              <span class="ref-range">&lt; 18.5</span>
+            </div>
+            <div class="ref-cell r-normal">
+              <span class="ref-name">Normal</span>
+              <span class="ref-range">18.5 – 24.9</span>
+            </div>
+            <div class="ref-cell r-over">
+              <span class="ref-name">Over&shy;weight</span>
+              <span class="ref-range">25 – 29.9</span>
+            </div>
+            <div class="ref-cell r-obese">
+              <span class="ref-name">Obese</span>
+              <span class="ref-range">&ge; 30</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        BMI is a screening tool, not a diagnostic measure. Consult a healthcare
+        professional for personalised advice.
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
