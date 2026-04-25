@@ -1,5 +1,5 @@
 ⚖️ BMI CalculatorA simple, sleek, and accurate way to check your Body Mass Index.
-🔗 Live Link: [https://bmi-calculator-git-main-suhail-s-projects-398aeda5.vercel.app/]
+🔗 Live Link: [https://bmi-calculator-pi-ecru.vercel.app/]
 🌟 About the ProjectI built this BMI Calculator to provide a quick,
 no-nonsense tool for anyone looking to monitor their health metrics
 . It takes the guesswork out of the math and gives you an instant categorization of
